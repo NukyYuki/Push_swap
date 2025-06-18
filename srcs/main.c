@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_operations3.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mipinhei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 14:29:58 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/18 16:40:23 by mipinhei         ###   ########.fr       */
+/*   Created: 2025/06/18 16:14:49 by mipinhei          #+#    #+#             */
+/*   Updated: 2025/06/18 17:49:45 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_rrr(t_stack **a, t_stack **b)
+int	main(int ac, char **av)
 {
-	ft_rra(t_stack a, 0);
-	ft_rrb(t_stack b, 0);
-	write(1, "rrr", 3);
+
+	if (ft_valid_numbers(ac, av) == 0)
+			return (1);
+	if (ac == 2)
+	{
+		lit_to_int(av[1]);
+
+	}
+	else
+		arr
 }
