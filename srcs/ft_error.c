@@ -12,38 +12,52 @@
 
 #include "../push_swap.c"
 
-int	ft_valid_numbers(int ac, char **av)
+int	ft_valid_numbers(char *av)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 1;
-	if (ac == 2)
-	{
-		while ((av[1][i] >= '0' && av[1][i] <= '9') || av[1][i] == ' '
-					|| av[1][i] == '+' || av[1][i] == '-')
-			i++;
-		if (av[1][i] == '\0')
+		if (!((*av >= '0' && *av <= '9') || *av == '+' || *av == '-'))
 			return (1);
-		else
+		if ((!(*av >= '0' && *av <= '9') || *av == '+' || *av == '-'))
+			return (1);
+		while (*++av)
+				if (!(*av >= '0' && *av <= '9'))
+					return (1);
 			return (0);
-	}
-	else
-	{
-		while (j < ac)
-		{
-			i = 0;
-			while ((av[j][i] >= '0' && av[j][i] <= '9') || av[j][i] == ' '
-						|| av[j][i] == '+' || av[j][i] == '-')
-				i++;
-			if (av[j][i] == '\0')
-				j++;
-			else
-				return (0);
-		}
-		return (1);
-	}
 }
 
-int	ft_valid_list(
+int	ft_valid_list(t_stack *a, int n)
+{
+	if (!a)
+		return (0);
+	while (a)
+	{
+		if (a->content == n)
+			return (1);
+		a = a->next;
+	}
+	return (0);
+}
+
+void	ft_free_list(t_stack **a)
+{
+	t_stack	*temp;
+	t_stack	*current;
+
+	if (!a)
+		return ;
+	current = *a;
+	while (current)
+	{
+		temp = current->next;
+		current->content = 0;
+		free(current);
+		current = temp;
+	}
+	*a = NULL;
+}
+
+void	free_err(t_stack **a)
+{
+	ft_free_list(a);
+	write(1, "Error\n", 6);
+   	exit(1);	
+}
