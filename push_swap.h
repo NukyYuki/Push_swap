@@ -15,10 +15,14 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
 typedef struct s_list_stack
 {
 	int					content;
+	int					index;
+	int					op_nb;
+	struct s_list_stack	*target;
 	struct s_list_stack	*next;
 	struct s_list_stack	*prev;
 }	t_stack;
@@ -35,5 +39,7 @@ void	ft_rr(t_stack **a, t_stack **b);
 void	ft_rra(t_stack **a, int i);
 void	ft_rrb(t_stack **b, int i);
 void	ft_rrr(t_stack **a, t_stack **b);
+char	**ft_split(char const *s, char c);
+int		ft_list_size(t_stack **head);
 
 #endif
