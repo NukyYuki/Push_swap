@@ -18,3 +18,53 @@ void	ft_stack_init(t_stack **a, char **av)
 		i++;
 	}
 }
+
+long	ft_atol(char *str)
+{
+	long	res;
+	int		sing;
+	int		i;
+
+	result = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] >= 9 && str[i] <= 13 || str[i] == 32)
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + (str[i] - '0');
+		i++;
+	}
+	return (res * sign);
+}
+
+void	add_node(t_stack **a, int content)
+{
+	t_stack	*new;
+	t_stack	*previous;
+
+	if (!a)
+		return ;
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		return ;
+	new->next = NULL;
+	new->content = content;
+	if (!*a)
+	{
+		*a = new;
+		new->prev = NULL;
+	}
+	else
+	{
+		last_node = ft_list_size(a);
+		last_node->next = new;
+		new->prev = last_node;
+	}
+}

@@ -24,10 +24,14 @@ int	main(int ac, char **av)
 	if (ac == 2)
 		av = ft_split(av[1], ' ');
 	ft_stack_init(&a, av + 1);
-	if (!sort_chcker(a))
+	if (!ft_sort_checker(a))
 	{
-		if (ft_list_size(t_stack **head) == 2)
+		if (ft_list_size(a) == 2)
 			sa(&a, 1);
+		else if (ft_list_size(a) == 3)
+			ft_sort_three(&a);
+		else
+			ft_turk(&a, &b);
 	}
 	ft_free_list(&a);
 	return (0);
