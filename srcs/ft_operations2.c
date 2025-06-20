@@ -19,8 +19,8 @@ void	ft_ra(t_stack **a, int i)
 
 	last = ft_list_last(a);
 	temp = *a;
-	*a = *a->next;
-	*a->prev = NULL;
+	*a = (*a)->next;
+	(*a)->prev = NULL;
 	last->next = temp;
 	temp->prev = last;
 	temp->next = NULL;
@@ -35,8 +35,8 @@ void	ft_rb(t_stack **b, int i)
 
 	last = ft_list_last(b);
 	temp = *b;
-	*b = *b->next;
-	*b->prev = NULL;
+	*b = (*b)->next;
+	(*b)->prev = NULL;
 	last->next = temp;
 	temp->prev = last;
 	temp->next = NULL;
@@ -61,7 +61,7 @@ void	ft_rra(t_stack **a, int i)
 	temp->next = NULL;
 	last->next = *a;
 	last->prev = NULL;
-	*a->prev = last;
+	(*a)->prev = last;
 	*a = last;
 	if (i == 1)
 		write(1, "rra", 3);
@@ -77,7 +77,7 @@ void	ft_rrb(t_stack **b, int i)
 	temp->next = NULL;
 	last->next = *b;
 	last->prev = NULL;
-	*b->prev = last;
+	(*b)->prev = last;
 	*b = last;
 	if (i == 1)
 		write(1, "rrb", 3);

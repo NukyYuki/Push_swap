@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.c"
+#include "../push_swap.h"
 
 int	ft_valid_numbers(char *av)
 {

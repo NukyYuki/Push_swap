@@ -7,7 +7,7 @@ void	ft_stack_init(t_stack **a, char **av)
 
 	while (av[i])
 	{
-		if (ft_valid_numbers(av[i] == 1)
+		if (ft_valid_numbers(av[i]) == 1)
 			free_err(a);
 		n = ft_atol(av[i]);
 		if (n > INT_MAX || n < INT_MIN)
@@ -22,10 +22,10 @@ void	ft_stack_init(t_stack **a, char **av)
 long	ft_atol(char *str)
 {
 	long	res;
-	int		sing;
+	int		sign;
 	int		i;
 
-	result = 0;
+	res = 0;
 	sign = 1;
 	i = 0;
 	while (str[i] >= 9 && str[i] <= 13 || str[i] == 32)
@@ -63,8 +63,8 @@ void	add_node(t_stack **a, int content)
 	}
 	else
 	{
-		last_node = ft_list_size(a);
-		last_node->next = new;
-		new->prev = last_node;
+		previous = ft_list_last(a);
+		previous->next = new;
+		new->prev = previous;
 	}
 }

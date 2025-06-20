@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_stack	ft_list_last(t_stack **head)
+t_stack	*ft_list_last(t_stack **head)
 {
 	if (!*head)
 		return (NULL);

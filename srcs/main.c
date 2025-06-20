@@ -27,7 +27,7 @@ int	main(int ac, char **av)
 	if (!ft_sort_checker(a))
 	{
 		if (ft_list_size(a) == 2)
-			sa(&a, 1);
+			ft_sa(&a, 1);
 		else if (ft_list_size(a) == 3)
 			ft_sort_three(&a);
 		else
