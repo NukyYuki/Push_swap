@@ -22,6 +22,8 @@ typedef struct s_list_stack
 	int					content;
 	int					index;
 	int					op_nb;
+	int					below_median;
+	int					true_op;
 	struct s_list_stack	*target;
 	struct s_list_stack	*next;
 	struct s_list_stack	*prev;
@@ -54,5 +56,7 @@ void	free_err(t_stack **a);
 t_stack	node_max(t_stack *stack);
 int		ft_sort_checker(t_stack *a);
 void	ft_sort_three(t_stack **a);
+t_stack	node_min(t_stack *stack);
+t_stack	node_max(t_stack *stack);
 
 #endif
