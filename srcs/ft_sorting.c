@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sorting.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/25 11:43:54 by mipinhei          #+#    #+#             */
+/*   Updated: 2025/06/25 13:59:28 by mipinhei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 int	ft_sort_checker(t_stack *a)
 {
 	if (!a)
-		return (NULL);
+		return (0);
 	while (a->next)
 	{
 		if (a->content > a->next->content)
@@ -13,7 +25,7 @@ int	ft_sort_checker(t_stack *a)
 	return (1);
 }
 
-t_stack	node_min(t_stack *stack)
+t_stack	*node_min(t_stack *stack)
 {
 	long	min;
 	t_stack	*node_min;
@@ -26,14 +38,14 @@ t_stack	node_min(t_stack *stack)
 		if (stack->content < min)
 		{
 			min = stack->content;
-			node_max = stack;
+			node_min = stack;
 		}
 		stack = stack->next;
 	}
 	return (node_min);
 }
 
-t_stack	node_max(t_stack *stack)
+t_stack	*node_max(t_stack *stack)
 {
 	long	max;
 	t_stack	*node_max;

@@ -1,33 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_turk_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/25 17:10:04 by mipinhei          #+#    #+#             */
+/*   Updated: 2025/06/25 17:14:00 by mipinhei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-void	prep_stacks(t_stack **a, t_stack **b)
+t_stack	*ft_cheapest_node(t_stack *stack)
 {
-	ft_median(a);
-	ft_median(b);
-}
 
-void	ft_median(t_stack *stack)
-{
-	int	i;
-	int	median;
-
-	if (!*stack)
-		return ;
-	median = ft_list_size(stack) / 2;
+	if (!stack)
+		return (NULL);
 	while (stack)
 	{
-		if (i <= median)
-			stack->below_median = 1;
-		else
-			stack->below_median = 0;
+		if (stack->cheapest == 1)
+			return (stack);
 		stack = stack->next;
-		i++;
 	}
-}
-
-void		a_target(t_stack *a, t_stack *b)
-{
-	t_stack	*current;
-	t_stack	*target;
-
+	return (NULL);
 }

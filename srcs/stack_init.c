@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_init.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/25 11:42:22 by mipinhei          #+#    #+#             */
+/*   Updated: 2025/06/25 13:55:33 by mipinhei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 void	ft_stack_init(t_stack **a, char **av)
@@ -5,6 +17,7 @@ void	ft_stack_init(t_stack **a, char **av)
 	long	n;
 	int		i;
 
+	i = 0;
 	while (av[i])
 	{
 		if (ft_valid_numbers(av[i]) == 1)

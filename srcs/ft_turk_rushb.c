@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_utils.c                                    :+:      :+:    :+:   */
+/*   ft_turk_rushb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 12:00:43 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/25 15:42:04 by mipinhei         ###   ########.fr       */
+/*   Created: 2025/06/25 16:51:51 by mipinhei          #+#    #+#             */
+/*   Updated: 2025/06/25 17:09:13 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-
-t_stack	*ft_list_last(t_stack **head)
+void	ft_rushb(t_stack **a, t_stack **b)
 {
-	if (!*head)
-		return (NULL);
-	while ((*head)->next)
-		*head = (*head)->next;
-	return (*head);
-}
+	int		stack_size;
+	t_stack	*cheapest;
 
-int	ft_list_size(t_stack *head)
-{
-	int	i;
-
-	i = 0;
-	if (!head)
-		return (0);
-	while (head)
+	if (!a || !b)
+		return ;
+	stack_size = ft_list_size(*a);
+	cheapest = *a;
+	while (stack_size-- > 3)
 	{
-		head = head->next;
-		i++;
+		while ((*a)->cheapest
+		if (
 	}
-	return (i);
 }

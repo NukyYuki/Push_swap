@@ -6,49 +6,18 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:56:04 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/18 14:29:29 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/06/25 17:26:03 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_ra(t_stack **a, int i)
+
+void	ft_rrr(t_stack **a, t_stack **b)
 {
-	t_stack	*last;
-	t_stack	*temp;
-
-	last = ft_list_last(a);
-	temp = *a;
-	*a = (*a)->next;
-	(*a)->prev = NULL;
-	last->next = temp;
-	temp->prev = last;
-	temp->next = NULL;
-	if (i == 1)
-		write(1, "ra", 2);
-}
-
-void	ft_rb(t_stack **b, int i)
-{
-	t_stack	*last;
-	t_stack	*temp;
-
-	last = ft_list_last(b);
-	temp = *b;
-	*b = (*b)->next;
-	(*b)->prev = NULL;
-	last->next = temp;
-	temp->prev = last;
-	temp->next = NULL;
-	if (i == 1)
-		write(1, "rb", 2);
-}
-
-void	ft_rr(t_stack **a, t_stack **b)
-{
-	ft_ra(a, 0);
-	ft_rb(b, 0);
-	write (1, "rr", 2);
+	ft_rra(a, 0);
+	ft_rrb(b, 0);
+	write(1, "rrr", 3);
 }
 
 void	ft_rra(t_stack **a, int i)

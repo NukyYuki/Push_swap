@@ -6,11 +6,11 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 18:01:37 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/04/12 10:51:46 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/06/25 13:53:04 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static size_t	count_words(char const *s, char c)
 {
