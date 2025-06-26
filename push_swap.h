@@ -69,13 +69,13 @@ void	prep_push_to_b(t_stack **stack, t_stack *cheapest, int check);
 //	sort prep
 t_stack	*node_min(t_stack *stack);
 t_stack	*node_max(t_stack *stack);
+t_stack	*ft_cheapest_node(t_stack *stack);
 void	prep_stacks(t_stack **a, t_stack **b);
-void	prep_stack_b(t_stack **a, t_stack **b)
+void	setup_push(t_stack **a, t_stack **b)
 void	ft_indexing(t_stack *stack);
 void	operations_cost_a(t_stack *a, t_stack *b)
-void	find_cheapest(t_stack *stack);
-t_stack	*ft_cheapest_node(t_stack *stack);
 void	a_target(t_stack *a, t_stack *b);
 void	b_target(t_stack *a, t_stack *b);
+void	check_top(t_stack **a);
 
 #endif

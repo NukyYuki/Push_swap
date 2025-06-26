@@ -25,3 +25,17 @@ t_stack	*ft_cheapest_node(t_stack *stack)
 	}
 	return (NULL);
 }
+
+void	check_top(t_stack **a)
+{
+	t_stack	*min;
+
+	min = node_min(*a);
+	while(*a->content != min->content)
+	{
+		if (min->below_median)
+			ft_ra(a, 1);
+		else
+			ft_rra(a, 1);
+	}
+}

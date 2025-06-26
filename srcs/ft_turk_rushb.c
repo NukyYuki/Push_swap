@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
+
 void	prep_rot(t_stack **a, t_stack **b, t_stack *cheapest, int check)
 {
 	if (check == 1)
@@ -34,7 +36,7 @@ void	prep_rot(t_stack **a, t_stack **b, t_stack *cheapest, int check)
 		return ;
 }
 
-void	prep_push_to_b(t_stack **stack, t_stack *cheapest, int check)
+void	setup_push(t_stack **stack, t_stack *cheapest, int check)
 {
 	while (*stack != cheapest)
 	{
@@ -68,7 +70,7 @@ void	ft_rushb(t_stack **a, t_stack **b)
 		prep_rot(a, b, cheapest, 0);
 	else if (cheapest->below_median == 1 && cheapest->target->below_median == 1)
 		prep_rot(a, b, cheapest, 1);
-	prep_push_b(a, cheapest, 1);
-	prep_push_b(b, cheapest, 0);
+	setup_push(a, cheapest, 1);
+	setup_push(b, cheapest, 0);
 	ft_pb(a, b);
 }

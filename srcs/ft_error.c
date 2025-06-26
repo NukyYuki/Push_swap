@@ -14,14 +14,16 @@
 
 int	ft_valid_numbers(char *av)
 {
-		if (!((*av >= '0' && *av <= '9') || *av == '+' || *av == '-'))
+	if (!((*av >= '0' && *av <= '9') || *av == '+' || *av == '-'))
+		return (1);
+	if ((!(*av >= '0' && *av <= '9') || *av == '+' || *av == '-'))
+		return (1);
+	while (*++av)
+	{
+		if (!(*av >= '0' && *av <= '9'))
 			return (1);
-		if ((!(*av >= '0' && *av <= '9') || *av == '+' || *av == '-'))
-			return (1);
-		while (*++av)
-				if (!(*av >= '0' && *av <= '9'))
-					return (1);
-			return (0);
+	}
+	return (0);
 }
 
 int	ft_valid_list(t_stack *a, int n)
@@ -59,5 +61,5 @@ void	free_err(t_stack **a)
 {
 	ft_free_list(a);
 	write(1, "Error\n", 6);
-   	exit(1);	
+	exit(1);
 }

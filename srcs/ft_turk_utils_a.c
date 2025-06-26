@@ -1,4 +1,4 @@
-/* ******************************p******************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_turk_utils_a.c                                  :+:      :+:    :+:   */
@@ -54,7 +54,8 @@ void	a_target(t_stack *a, t_stack *b)
 		current = b;
 		while (current)
 		{
-			if (current->content < a->content && current->content > match_nbr)
+			if (current->content < a->content
+				&& current->content > match_nbr)
 			{
 				match_nbr = current->content;
 				target = current;
