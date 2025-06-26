@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:42:56 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/25 16:51:22 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:09:04 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	prep_stack_a(t_stack **a, t_stack **b)
 {
 	ft_indexing(*a);
 	ft_indexing(*b);
+	a_target(*a, *b);
 	operations_cost_a(*a, *b);
 	find_cheapest(*a);
 }
@@ -41,7 +42,7 @@ void	ft_indexing(t_stack *stack)
 	}
 }
 
-void		a_target(t_stack *a, t_stack *b)
+void	a_target(t_stack *a, t_stack *b)
 {
 	t_stack	*current;
 	t_stack	*target;
@@ -53,7 +54,7 @@ void		a_target(t_stack *a, t_stack *b)
 		current = b;
 		while (current)
 		{
-			if ( current->content < a->content && current->content > match_nbr)
+			if (current->content < a->content && current->content > match_nbr)
 			{
 				match_nbr = current->content;
 				target = current;
@@ -77,7 +78,7 @@ void	operations_cost_a(t_stack *a, t_stack *b)
 	b_size = ft_list_size(b);
 	while (a)
 	{
-		a->op_cost = a->index;
+		a->op_cost = 0;
 		if (a->below_median == 1)
 			a->op_cost = a_size - a->index;
 		if (a->target->below_median == 0)

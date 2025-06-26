@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:43:19 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/25 17:01:13 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:04:13 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_turk(t_stack **a, t_stack **b)
 	ft_sort_three(a);
 	while (*b)
 	{
-	
+		prep_stack_b(a, b);
+		ft_pullback_a(a, b);
 	}
 }
