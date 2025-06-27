@@ -6,7 +6,7 @@
 /*   By: mipinhei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 15:41:31 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/26 16:38:52 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/06/27 12:33:00 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_list_stack
 }	t_stack;
 
 //	list helper
+void	ft_stack_init(t_stack **a, char **av);
 t_stack	*ft_list_last(t_stack **head);
 void	add_node(t_stack **a, int content);
 int		ft_list_size(t_stack *head);
@@ -66,14 +67,18 @@ void	ft_sort_three(t_stack **a);
 void	ft_turk(t_stack **a, t_stack **b);
 void	prep_rot(t_stack **a, t_stack **b, t_stack *cheapest, int check);
 void	prep_push_to_b(t_stack **stack, t_stack *cheapest, int check);
+void	ft_rushb(t_stack **a, t_stack **b);
 //	sort prep
 t_stack	*node_min(t_stack *stack);
 t_stack	*node_max(t_stack *stack);
 t_stack	*ft_cheapest_node(t_stack *stack);
+void	find_cheapest(t_stack *stack);
 void	prep_stacks(t_stack **a, t_stack **b);
-void	setup_push(t_stack **a, t_stack **b)
+void	prep_stack_a(t_stack **a, t_stack **b);
+void	prep_stack_b(t_stack **a, t_stack **b);
+void	setup_push(t_stack **a, t_stack *b, int check);
 void	ft_indexing(t_stack *stack);
-void	operations_cost_a(t_stack *a, t_stack *b)
+void	operations_cost_a(t_stack *a, t_stack *b);
 void	a_target(t_stack *a, t_stack *b);
 void	b_target(t_stack *a, t_stack *b);
 void	check_top(t_stack **a);

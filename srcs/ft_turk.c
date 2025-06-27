@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_turk.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/27 12:30:49 by mipinhei          #+#    #+#             */
+/*   Updated: 2025/06/27 12:33:16 by mipinhei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 void	ft_turk(t_stack **a, t_stack **b)
@@ -18,8 +30,8 @@ void	ft_turk(t_stack **a, t_stack **b)
 	while (*b)
 	{
 		prep_stack_b(a, b);
-		prep_rot(a, (*b)->target, 0);
-		ft_pb(a, b, 1);
+		prep_rot(a, b, (*b)->target, 0);
+		ft_pb(a, b);
 	}
 	ft_indexing(*a);
 	check_top(a);
