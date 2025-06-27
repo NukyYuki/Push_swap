@@ -34,9 +34,9 @@ void	ft_indexing(t_stack *stack)
 	{
 		stack->index = i;
 		if (i <= median)
-			stack->below_median = 1;
-		else
 			stack->below_median = 0;
+		else
+			stack->below_median = 1;
 		stack = stack->next;
 		i++;
 	}
@@ -81,11 +81,11 @@ void	operations_cost_a(t_stack *a, t_stack *b)
 	{
 		a->op_cost = 0;
 		if (a->below_median == 1)
-			a->op_cost = a_size - a->index;
+			a->op_cost = a->index;
 		if (a->target->below_median == 0)
 			a->op_cost += a->target->index;
 		else
-			a->op_cost += b_size - a->target->index;
+			a->op_cost += a_size - a->index;
 		a = a->next;
 	}
 }

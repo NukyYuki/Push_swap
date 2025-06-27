@@ -25,7 +25,11 @@ void	ft_rra(t_stack **a, int i)
 	t_stack	*last;
 	t_stack	*temp;
 
+	if (!*a || !(*a)->next)
+		return ;
 	last = ft_list_last(a);
+	if (!last || !last->prev)
+		return ;
 	temp = last->prev;
 	temp->next = NULL;
 	last->next = *a;

@@ -36,8 +36,8 @@ void	check_top(t_stack **a)
 	while((*a)->content != min->content)
 	{
 		if (min->below_median)
-			ft_ra(a, 1);
-		else
 			ft_rra(a, 1);
+		else
+			ft_ra(a, 1);
 	}
 }
