@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_operations.c                                    :+:      :+:    :+:   */
+/*   ft_push_and_swap.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:19:54 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/25 17:28:35 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/06/27 17:30:19 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,23 @@ void	ft_pb(t_stack **a, t_stack **b)
 
 	if (!*a)
 		return ;
-	temp = *b;
-	*a = *b;
-	*a = (*a)->next;
-	(*b)->next = temp;
-	write(1, "pb", 2);
+	if (!*b)
+	{
+		*b = *a;
+		*a = (*a)->next;
+		(*a)->prev = NULL;
+		(*b)->next = NULL;
+	}
+	else
+	{
+		temp = *b;
+		*b = *a;
+		*a = (*a)->next;
+		(*a)->prev = NULL;
+		(*b)->next = temp;
+		temp->prev = (*b);
+	}
+	write(1, "pb\n", 3);
 }
 
 void	ft_pa(t_stack **a, t_stack **b)
@@ -31,11 +43,28 @@ void	ft_pa(t_stack **a, t_stack **b)
 
 	if (!*b)
 		return ;
-	temp = *a;
-	*b = *a;
-	*b = (*b)->next;
-	(*a)->next = temp;
-	write(1, "pa", 2);
+	if (!*a)
+	{
+		*a = *b;
+		*b = (*b)->next;
+		(*b)->prev = NULL;
+		(*a)->next = NULL;
+	}
+	else
+	{
+		temp = *a;
+		*a = *b;
+		if (ft_list_size(*b) > 1)
+		{
+			*b = (*b)->next;
+			(*b)->prev = NULL;
+		}
+		else
+			*b = NULL;
+		(*a)->next = temp;
+		temp->prev = (*a);
+	}
+	write(1, "pa\n", 3);
 }
 
 void	ft_sa(t_stack **a, int i)
@@ -51,7 +80,7 @@ void	ft_sa(t_stack **a, int i)
 	(*a)->next = temp;
 	(*a)->prev = NULL;
 	if (i == 1)
-		write(1, "sa", 2);
+		write(1, "sa\n", 3);
 }
 
 void	ft_sb(t_stack **b, int i)
@@ -67,12 +96,12 @@ void	ft_sb(t_stack **b, int i)
 	(*b)->next = temp;
 	(*b)->prev = NULL;
 	if (i == 1)
-		write(1, "sb", 2);
+		write(1, "sb\n", 3);
 }
 
 void	ft_ss(t_stack **a, t_stack **b)
 {
 	ft_sa(a, 0);
 	ft_sb(b, 0);
-	write(1, "ss", 2);
+	write(1, "ss\n", 3);
 }

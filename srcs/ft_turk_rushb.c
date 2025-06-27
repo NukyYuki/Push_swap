@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:51:51 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/26 17:19:48 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/06/27 17:45:01 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ void	ft_rushb(t_stack **a, t_stack **b)
 	else if (cheapest->below_median == 1 && cheapest->target->below_median == 1)
 		prep_rot(a, b, cheapest, 1);
 	setup_push(a, cheapest, 1);
-	setup_push(b, cheapest, 0);
+	setup_push(b, cheapest->target, 0);
 	ft_pb(a, b);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_operations2.c                                   :+:      :+:    :+:   */
+/*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:56:04 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/25 17:26:03 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/06/27 17:14:53 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_rrr(t_stack **a, t_stack **b)
 {
 	ft_rra(a, 0);
 	ft_rrb(b, 0);
-	write(1, "rrr", 3);
+	write(1, "rrr\n", 4);
 }
 
 void	ft_rra(t_stack **a, int i)
@@ -33,7 +33,7 @@ void	ft_rra(t_stack **a, int i)
 	(*a)->prev = last;
 	*a = last;
 	if (i == 1)
-		write(1, "rra", 3);
+		write(1, "rra\n", 4);
 }
 
 void	ft_rrb(t_stack **b, int i)
@@ -49,5 +49,5 @@ void	ft_rrb(t_stack **b, int i)
 	(*b)->prev = last;
 	*b = last;
 	if (i == 1)
-		write(1, "rrb", 3);
+		write(1, "rrb\n", 4);
 }

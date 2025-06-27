@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 12:00:43 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/26 17:19:49 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/06/27 17:11:32 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,25 @@
 
 t_stack	*ft_list_last(t_stack **head)
 {
+	t_stack	*index;
+
+	index = NULL;
 	if (!*head)
 		return (NULL);
-	while ((*head)->next)
-		*head = (*head)->next;
-	return (*head);
+	index = *head;
+	while (index->next)
+		index = index->next;
+	return (index);
 }
 
 int	ft_list_size(t_stack *head)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	if (!head)
 		return (0);
-	while (head)
+	while (head->next)
 	{
 		head = head->next;
 		i++;
