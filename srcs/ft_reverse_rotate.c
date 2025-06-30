@@ -45,8 +45,11 @@ void	ft_rrb(t_stack **b, int i)
 	t_stack	*last;
 	t_stack	*temp;
 
-	last = ft_list_last(b);
-	temp = last->prev;
+	if (!*a || !(*a)->next)
+		return ;
+	last = ft_list_last(a);
+	if (!last || !last->prev)
+		return ;
 	temp->next = NULL;
 	last->next = *b;
 	last->prev = NULL;
