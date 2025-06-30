@@ -15,8 +15,6 @@
 
 void	ft_rrr(t_stack **a, t_stack **b)
 {
-	if (!*a || !(*a)->next || !*b || !(*b)->next)
-		return ;
 	ft_rra(a, 0);
 	ft_rrb(b, 0);
 	write(1, "rrr\n", 4);
@@ -47,9 +45,9 @@ void	ft_rrb(t_stack **b, int i)
 	t_stack	*last;
 	t_stack	*temp;
 
-	if (!*a || !(*a)->next)
+	if (!*b || !(*b)->next)
 		return ;
-	last = ft_list_last(a);
+	last = ft_list_last(b);
 	if (!last || !last->prev)
 		return ;
 	temp->next = NULL;
