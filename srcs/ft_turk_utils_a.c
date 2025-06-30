@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:42:56 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/27 12:32:40 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/06/30 13:39:30 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,8 @@ void	operations_cost_a(t_stack *a, t_stack *b)
 		a->op_cost = 0;
 		if (a->below_median == 1)
 			a->op_cost = a->index;
-		if (a->target->below_median == 0)
-			a->op_cost += a->target->index;
 		else
-			a->op_cost += a_size - a->index;
+			a->op_cost = a_size - a->index;
 		a = a->next;
 	}
 }
