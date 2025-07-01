@@ -6,7 +6,7 @@
 /*   By: mipinhei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 15:41:31 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/27 17:45:39 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/01 15:40:40 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_list_stack
 	int					content;
 	int					index;
 	int					op_cost;
-	int					below_median;
+	int					top_stack;
 	int					cheapest;
 	struct s_list_stack	*target;
 	struct s_list_stack	*next;

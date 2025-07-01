@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:10:04 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/30 13:11:37 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/01 15:41:24 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	check_top(t_stack **a)
 	min = node_min(*a);
 	while((*a)->content != min->content)
 	{
-		if (min->below_median)
+		if (min->top_stack)
 			ft_rra(a, 1);
 		else
 			ft_ra(a, 1);

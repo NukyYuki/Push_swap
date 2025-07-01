@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 12:30:49 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/27 17:27:54 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/01 15:05:31 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ void	ft_turk(t_stack **a, t_stack **b)
 	while (*b)
 	{
 		prep_stack_b(a, b);
-		if (ft_list_size(*b) > 1)
-			prep_rot(a, b, (*b)->target, 0);
+		prep_rot(a, b, (*b)->target, 0);
 		ft_pa(a, b);
 	}
 	ft_indexing(*a);

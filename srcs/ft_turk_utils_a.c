@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:42:56 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/30 13:39:30 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/01 15:46:20 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	ft_indexing(t_stack *stack)
 	{
 		stack->index = i;
 		if (i <= median)
-			stack->below_median = 0;
+			stack->top_stack = 0;
 		else
-			stack->below_median = 1;
+			stack->top_stack = 1;
 		stack = stack->next;
 		i++;
 	}
@@ -80,7 +80,7 @@ void	operations_cost_a(t_stack *a, t_stack *b)
 	while (a)
 	{
 		a->op_cost = 0;
-		if (a->below_median == 1)
+		if (a->top_stack == 1)
 			a->op_cost = a->index;
 		else
 			a->op_cost = a_size - a->index;

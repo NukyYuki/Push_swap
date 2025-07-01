@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:19:54 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 10:57:34 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/01 15:49:49 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ void	ft_sa(t_stack **a, int i)
 	*a = (*a)->next;
 	temp->next = (*a)->next;
 	temp->prev = *a;
-	temp->next->prev = temp;
+	if (temp->next)
+		temp->next->prev = temp;
 	(*a)->next = temp;
 	(*a)->prev = NULL;
 	if (i == 1)
@@ -96,7 +97,8 @@ void	ft_sb(t_stack **b, int i)
 	*b = (*b)->next;
 	temp->next = (*b)->next;
 	temp->prev = *b;
-	temp->next->prev = temp;
+	if (temp->next)
+		temp->next->prev = temp;
 	(*b)->next = temp;
 	(*b)->prev = NULL;
 	if (i == 1)
