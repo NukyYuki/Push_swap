@@ -49,7 +49,7 @@ void	ft_rb(t_stack **b, int i)
 	if (!last || !last->prev)
 		return ;
 	last->next = *b;
-	*b->next->prev = NULL;
+	(*b)->next->prev = NULL;
 	*b = (*b)->next;
 	last->next->prev = last;
 	last->next->next = NULL;

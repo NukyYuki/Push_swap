@@ -14,9 +14,12 @@
 
 void	prep_rot(t_stack **a, t_stack **b, t_stack *cheapest, int check)
 {
+	if (!cheapest || !cheapest->target)
+		return ;
 	if (check == 1)
 	{
-		while (*b != cheapest->target && *a != cheapest)
+		while ((*b && (*b)->content != cheapest->target->content) 
+				&& (*a && (*a)->content != cheapest->content))
 		{
 			ft_rr(a, b);
 			ft_indexing(*a);
@@ -25,57 +28,53 @@ void	prep_rot(t_stack **a, t_stack **b, t_stack *cheapest, int check)
 	}
 	else if (check == 0)
 	{
-		while (*b != cheapest->target && *a != cheapest)
+		while ((*b && (*b)->content != cheapest->target->content) 
+				&& (*a && (*a)->content != cheapest->content))
 		{
 			ft_rrr(a, b);
 			ft_indexing(*a);
 			ft_indexing(*b);
 		}
 	}
-	else
-		return ;
 }
 
-t_stack	*check_stack(t_stack **stack, t_stack *cheapest)
+int	valid_node(t_stack *stack, int content)
 {
-	t_stack	*check;
-
-	check = *stack;
-	while (check->next)
+	while (stack)
 	{
-		if (check == cheapest)
-			return (check);
-		check = check->next;
+		if (stack->content == content)
+			return (1);
+		stack = stack->next;
 	}
-	return (NULL);
+	return (0);
 }
 
 void	setup_push(t_stack **stack, t_stack *cheapest, int check)
 {
-	t_stack	*check_node;
-
-	check_node = check_stack(stack, cheapest);
-	if (check_node)
+	if (!*stack || !cheapest)
+		return ;
+	if (!valid_node(*stack, cheapest->content))
+		return ;
+	while ((*stack)->content != cheapest->content)
 	{
-		while (*stack != cheapest)
+		if (check == 1)
 		{
-			if (check == 1)
-			{
-				if (cheapest->top_stack == 0)
-					ft_ra(stack, 1);
-				else
-					ft_rra(stack, 1);
-			}
-			else if (check == 0)
-			{
-				if (cheapest->top_stack == 0)
-					ft_rb(stack, 1);
-				else
-					ft_rrb(stack, 1);
-			}
+			if (cheapest->top_stack == 0)
+				ft_ra(stack, 1);
+			else
+				ft_rra(stack, 1);
 		}
+		else if (check == 0)
+		{
+			if (cheapest->top_stack == 0)
+				ft_rb(stack, 1);
+			else
+				ft_rrb(stack, 1);
+		}
+		ft_indexing(*stack);
 	}
 }
+
 
 void	ft_rushb(t_stack **a, t_stack **b)
 {
@@ -85,7 +84,10 @@ void	ft_rushb(t_stack **a, t_stack **b)
 	if (!a || !b)
 		return ;
 	stack_size = ft_list_size(*a);
+	prep_stack_a(a, b);
 	cheapest = ft_cheapest_node(*a);
+	if (!cheapest || !cheapest->target)
+		return ;
 	if (cheapest->top_stack == 0 && cheapest->target->top_stack == 0)
 		prep_rot(a, b, cheapest, 0);
 	else if (cheapest->top_stack == 1 && cheapest->target->top_stack == 1)
@@ -93,4 +95,6 @@ void	ft_rushb(t_stack **a, t_stack **b)
 	setup_push(a, cheapest, 1);
 	setup_push(b, cheapest->target, 0);
 	ft_pb(a, b);
+	prep_stack_a(a, b);
+	cheapest = ft_cheapest_node(*a);
 }

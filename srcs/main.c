@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <stdio.h>
 
 int	main(int ac, char **av)
 {
@@ -19,6 +20,7 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
+	t_stack *i = a;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
 	if (ac == 2)
@@ -28,7 +30,7 @@ int	main(int ac, char **av)
 	}
 	else
 		ft_stack_init(&a, av + 1);
-	while (!ft_sort_checker(a) && !b)
+	while (!ft_sort_checker(a))
 	{
 		if (ft_list_size(a) == 2)
 			ft_sa(&a, 1);
@@ -36,6 +38,17 @@ int	main(int ac, char **av)
 			ft_sort_three(&a);
 		else
 			ft_turk(&a, &b);
+	while (i)	
+	{
+		printf("%i\n", i->content);
+		i = i->next;
+	}
+	i = a;
+	}
+	while (a)	
+	{
+		printf("%i\n", a->content);
+		a = a->next;
 	}
 	ft_free_list(&a);
 	return (0);
