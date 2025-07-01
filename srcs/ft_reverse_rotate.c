@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:56:04 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/27 17:14:53 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/01 11:25:56 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_rra(t_stack **a, int i)
 	last = ft_list_last(a);
 	if (!last || !last->prev)
 		return ;
+	temp = *a;
 	temp = last->prev;
 	temp->next = NULL;
 	last->next = *a;
@@ -50,6 +51,7 @@ void	ft_rrb(t_stack **b, int i)
 	last = ft_list_last(b);
 	if (!last || !last->prev)
 		return ;
+	temp = *b;
 	temp->next = NULL;
 	last->next = *b;
 	last->prev = NULL;

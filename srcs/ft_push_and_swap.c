@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:19:54 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/27 17:30:19 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/01 10:57:34 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	ft_pb(t_stack **a, t_stack **b)
 		*a = (*a)->next;
 		(*a)->prev = NULL;
 		(*b)->next = temp;
+		if (!temp->prev)
+			(*b)->prev = NULL;
 		temp->prev = (*b);
 	}
 	write(1, "pb\n", 3);
@@ -77,6 +79,7 @@ void	ft_sa(t_stack **a, int i)
 	*a = (*a)->next;
 	temp->next = (*a)->next;
 	temp->prev = *a;
+	temp->next->prev = temp;
 	(*a)->next = temp;
 	(*a)->prev = NULL;
 	if (i == 1)
@@ -93,6 +96,7 @@ void	ft_sb(t_stack **b, int i)
 	*b = (*b)->next;
 	temp->next = (*b)->next;
 	temp->prev = *b;
+	temp->next->prev = temp;
 	(*b)->next = temp;
 	(*b)->prev = NULL;
 	if (i == 1)
