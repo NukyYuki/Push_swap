@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:56:04 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 11:25:56 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/01 17:22:55 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,16 @@ void	ft_rrr(t_stack **a, t_stack **b)
 void	ft_rra(t_stack **a, int i)
 {
 	t_stack	*last;
-	t_stack	*temp;
 
 	if (!*a || !(*a)->next)
 		return ;
 	last = ft_list_last(a);
 	if (!last || !last->prev)
 		return ;
-	temp = *a;
-	temp = last->prev;
-	temp->next = NULL;
 	last->next = *a;
+	last->prev->next = NULL;
 	last->prev = NULL;
-	(*a)->prev = last;
+	last->next->prev = last;
 	*a = last;
 	if (i == 1)
 		write(1, "rra\n", 4);
@@ -44,18 +41,16 @@ void	ft_rra(t_stack **a, int i)
 void	ft_rrb(t_stack **b, int i)
 {
 	t_stack	*last;
-	t_stack	*temp;
 
 	if (!*b || !(*b)->next)
 		return ;
 	last = ft_list_last(b);
 	if (!last || !last->prev)
 		return ;
-	temp = *b;
-	temp->next = NULL;
 	last->next = *b;
+	last->prev->next = NULL;
 	last->prev = NULL;
-	(*b)->prev = last;
+	last->next->prev = last;
 	*b = last;
 	if (i == 1)
 		write(1, "rrb\n", 4);
