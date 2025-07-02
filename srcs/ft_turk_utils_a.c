@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:42:56 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 15:46:20 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:55:31 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,13 @@ void	a_target(t_stack *a, t_stack *b)
 void	operations_cost_a(t_stack *a, t_stack *b)
 {
 	int	a_size;
-	int	b_size;
+	int	median;
 
 	a_size = ft_list_size(a);
-	b_size = ft_list_size(b);
+	median = a_size / 2;
 	while (a)
 	{
-		a->op_cost = 0;
-		if (a->top_stack == 1)
+		if (a->index <= median)
 			a->op_cost = a->index;
 		else
 			a->op_cost = a_size - a->index;
