@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:19:54 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 15:49:49 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 12:06:18 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_pa(t_stack **a, t_stack **b)
 	{
 		temp = *a;
 		*a = *b;
-		if (ft_list_size(*b) > 1)
+		if ((*b)->next)
 		{
 			*b = (*b)->next;
 			(*b)->prev = NULL;
@@ -65,6 +65,7 @@ void	ft_pa(t_stack **a, t_stack **b)
 			*b = NULL;
 		(*a)->next = temp;
 		temp->prev = (*a);
+		(*a)->prev = NULL;
 	}
 	write(1, "pa\n", 3);
 }
