@@ -6,12 +6,11 @@
 /*   By: mipinhei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:29:58 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 16:44:18 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:28:15 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
 
 void	ft_rr(t_stack **a, t_stack **b)
 {

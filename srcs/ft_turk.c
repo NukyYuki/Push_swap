@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 12:30:49 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 16:32:58 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:39:20 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_turk(t_stack **a, t_stack **b)
 {
 	int	stack_size;
-	
+
 	stack_size = ft_list_size(*a);
 	if (stack_size-- > 3 && !ft_sort_checker(*a))
 		ft_pb(a, b);

@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:51:51 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 17:00:36 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:18:40 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	prep_rot_b(t_stack **a, t_stack **b, t_stack *cheapest, int check)
 		return ;
 	if (check == 1)
 	{
-		while ((*b && (*b)->content != cheapest->target->content) 
-				&& (*a && (*a)->content != cheapest->content))
+		while ((*b && (*b)->content != cheapest->target->content)
+			&& (*a && (*a)->content != cheapest->content))
 		{
 			ft_rr(a, b);
 			ft_indexing(*a);
@@ -28,8 +28,8 @@ void	prep_rot_b(t_stack **a, t_stack **b, t_stack *cheapest, int check)
 	}
 	else if (check == 0)
 	{
-		while ((*b && (*b)->content != cheapest->target->content) 
-				&& (*a && (*a)->content != cheapest->content))
+		while ((*b && (*b)->content != cheapest->target->content)
+			&& (*a && (*a)->content != cheapest->content))
 		{
 			ft_rrr(a, b);
 			ft_indexing(*a);
@@ -74,7 +74,6 @@ void	setup_push(t_stack **stack, t_stack *cheapest, int check)
 		ft_indexing(*stack);
 	}
 }
-
 
 void	ft_rushb(t_stack **a, t_stack **b)
 {

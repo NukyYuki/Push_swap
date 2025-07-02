@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:10:04 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 17:00:20 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:38:24 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_stack	*ft_cheapest_node(t_stack *stack)
 {
-
 	if (!stack)
 		return (NULL);
 	while (stack)
@@ -33,7 +32,7 @@ void	check_top(t_stack **a)
 	if (!*a)
 		return ;
 	min = node_min(*a);
-	while((*a)->content != min->content)
+	while ((*a)->content != min->content)
 	{
 		if (min->top_stack)
 			ft_rra(a, 1);
@@ -69,8 +68,8 @@ void	prep_rot_a(t_stack **a, t_stack **b, t_stack *cheapest, int check)
 		return ;
 	if (check == 1)
 	{
-		while ((*a && (*a)->content != cheapest->target->content) 
-				&& (*b && (*b)->content != cheapest->content))
+		while ((*a && (*a)->content != cheapest->target->content)
+			&& (*b && (*b)->content != cheapest->content))
 		{
 			ft_rr(a, b);
 			ft_indexing(*a);
@@ -79,8 +78,8 @@ void	prep_rot_a(t_stack **a, t_stack **b, t_stack *cheapest, int check)
 	}
 	else if (check == 0)
 	{
-		while ((*a && (*a)->content != cheapest->target->content) 
-				&& (*b && (*b)->content != cheapest->content))
+		while ((*a && (*a)->content != cheapest->target->content)
+			&& (*b && (*b)->content != cheapest->content))
 		{
 			ft_rrr(a, b);
 			ft_indexing(*a);
