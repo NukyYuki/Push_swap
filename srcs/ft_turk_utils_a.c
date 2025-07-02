@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:42:56 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 14:45:43 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:38:13 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	prep_stack_a(t_stack **a, t_stack **b)
 	ft_indexing(*a);
 	ft_indexing(*b);
 	a_target(*a, *b);
-	operations_cost_a(*a);
+	operations_cost_a(*a, *b);
 	find_cheapest(*a);
 }
 
@@ -70,19 +70,30 @@ void	a_target(t_stack *a, t_stack *b)
 	}
 }
 
-void	operations_cost_a(t_stack *a)
+void	operations_cost_a(t_stack *a, t_stack *b)
 {
 	int	a_size;
-	int	median;
+	int	b_size;
+	int	a_median;
+	int	b_median;
 
 	a_size = ft_list_size(a);
-	median = a_size / 2;
+	b_size = ft_list_size(b);
+	a_median = a_size / 2;
+	b_median = b_size / 2;
 	while (a)
 	{
-		if (a->index <= median)
+		if (a->index <= a_median)
 			a->op_cost = a->index;
 		else
 			a->op_cost = a_size - a->index;
+		if (a->target)
+		{
+				if (a->target->index <= b_median)
+					a->op_cost += a->target->index;
+				else
+					a->op_cost += b_size - a->target->index;
+		}
 		a = a->next;
 	}
 }

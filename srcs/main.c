@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 16:14:49 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 14:55:43 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:47:51 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ int	main(int ac, char **av)
 		else
 			ft_turk(&a, &b);
 	}
+//	while (a)
+//	{
+//		printf("%i\n", a->content);
+//		a = a->next;
+//	}
 	ft_free_list(&a);
 	return (0);
 }
