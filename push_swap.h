@@ -6,7 +6,7 @@
 /*   By: mipinhei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 15:41:31 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 15:40:40 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 14:44:36 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	prep_stack_a(t_stack **a, t_stack **b);
 void	prep_stack_b(t_stack **a, t_stack **b);
 void	setup_push(t_stack **a, t_stack *b, int check);
 void	ft_indexing(t_stack *stack);
-void	operations_cost_a(t_stack *a, t_stack *b);
+void	operations_cost_a(t_stack *a);
 void	a_target(t_stack *a, t_stack *b);
 void	b_target(t_stack *a, t_stack *b);
 void	check_top(t_stack **a);

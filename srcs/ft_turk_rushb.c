@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:51:51 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 16:00:24 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 14:52:08 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,10 @@ void	setup_push(t_stack **stack, t_stack *cheapest, int check)
 
 void	ft_rushb(t_stack **a, t_stack **b)
 {
-	int		stack_size;
 	t_stack	*cheapest;
 
 	if (!a || !b)
 		return ;
-	stack_size = ft_list_size(*a);
 	prep_stack_a(a, b);
 	cheapest = ft_cheapest_node(*a);
 	if (!cheapest || !cheapest->target)

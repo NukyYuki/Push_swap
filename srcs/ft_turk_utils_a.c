@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:42:56 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 13:55:31 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 14:45:43 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	prep_stack_a(t_stack **a, t_stack **b)
 	ft_indexing(*a);
 	ft_indexing(*b);
 	a_target(*a, *b);
-	operations_cost_a(*a, *b);
+	operations_cost_a(*a);
 	find_cheapest(*a);
 }
 
@@ -70,7 +70,7 @@ void	a_target(t_stack *a, t_stack *b)
 	}
 }
 
-void	operations_cost_a(t_stack *a, t_stack *b)
+void	operations_cost_a(t_stack *a)
 {
 	int	a_size;
 	int	median;

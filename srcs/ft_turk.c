@@ -6,17 +6,15 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 12:30:49 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 14:30:39 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 14:57:47 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
 void	ft_turk(t_stack **a, t_stack **b)
 {
 	int	stack_size;
-	int count = 0;
 	
 	stack_size = ft_list_size(*a);
 	if (stack_size-- > 3 && !ft_sort_checker(*a))

@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 16:14:49 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 13:13:24 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 14:55:43 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	t_stack *i = a;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
 	if (ac == 2)
@@ -38,17 +37,6 @@ int	main(int ac, char **av)
 			ft_sort_three(&a);
 		else
 			ft_turk(&a, &b);
-	while (i)	
-	{
-		printf("%i\n", i->content);
-		i = i->next;
-	}
-	i = a;
-	}
-	while (a)	
-	{
-		printf("%i\n", a->content);
-		a = a->next;
 	}
 	ft_free_list(&a);
 	return (0);
