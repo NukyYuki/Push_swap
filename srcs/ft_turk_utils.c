@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:10:04 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 17:38:24 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:56:46 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,15 @@ void	ft_rusha(t_stack **a, t_stack **b)
 	cheapest = ft_cheapest_node(*b);
 	if (!cheapest || !cheapest->target)
 		return ;
-	if (cheapest->top_stack == 0 && cheapest->target->top_stack == 0)
-		prep_rot_a(a, b, cheapest, 0);
-	else if (cheapest->top_stack == 1 && cheapest->target->top_stack == 1)
-		prep_rot_a(a, b, cheapest, 1);
+//	if (cheapest->top_stack == 0 && cheapest->target->top_stack == 0)
+//		prep_rot_a(a, b, cheapest, 0);
+//	else if (cheapest->top_stack == 1 && cheapest->target->top_stack == 1)
+//		prep_rot_a(a, b, cheapest, 1);
 	setup_push(b, cheapest, 0);
 	setup_push(a, cheapest->target, 1);
 	ft_pa(a, b);
-	prep_stack_b(a, b);
-	ft_cheapest_node(*b);
+//	prep_stack_b(a, b);
+//	ft_cheapest_node(*b);
 }
 
 void	prep_rot_a(t_stack **a, t_stack **b, t_stack *cheapest, int check)

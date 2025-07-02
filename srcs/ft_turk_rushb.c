@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:51:51 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 18:18:40 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:59:32 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,13 +85,13 @@ void	ft_rushb(t_stack **a, t_stack **b)
 	cheapest = ft_cheapest_node(*a);
 	if (!cheapest || !cheapest->target)
 		return ;
-	if (cheapest->top_stack == 0 && cheapest->target->top_stack == 0)
-		prep_rot_b(a, b, cheapest, 0);
-	else if (cheapest->top_stack == 1 && cheapest->target->top_stack == 1)
-		prep_rot_b(a, b, cheapest, 1);
+//	if (cheapest->top_stack == 0 && cheapest->target->top_stack == 0)
+//		prep_rot_b(a, b, cheapest, 0);
+//	else if (cheapest->top_stack == 1 && cheapest->target->top_stack == 1)
+//		prep_rot_b(a, b, cheapest, 1);
 	setup_push(a, cheapest, 1);
 	setup_push(b, cheapest->target, 0);
 	ft_pb(a, b);
-	prep_stack_a(a, b);
-	ft_cheapest_node(*a);
+//	prep_stack_a(a, b);
+//	ft_cheapest_node(*a);
 }
