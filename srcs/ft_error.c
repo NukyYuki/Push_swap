@@ -16,7 +16,7 @@ int	ft_valid_numbers(char *av)
 {
 	if (!((*av >= '0' && *av <= '9') || *av == '+' || *av == '-'))
 		return (1);
-	if ((!(*av >= '0' && *av <= '9') || *av == '+' || *av == '-'))
+	if ((*av == '+' || *av == '-') && !*(av + 1))
 		return (1);
 	while (*++av)
 	{

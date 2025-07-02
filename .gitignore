@@ -1,0 +1,16 @@
+# Object files
+*.o
+
+# Executable
+push_swap
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Temporary files
+*~
+*.swp
+*.tmp

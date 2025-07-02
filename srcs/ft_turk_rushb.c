@@ -78,12 +78,10 @@ void	setup_push(t_stack **stack, t_stack *cheapest, int check)
 
 void	ft_rushb(t_stack **a, t_stack **b)
 {
-	int		stack_size;
 	t_stack	*cheapest;
 
 	if (!a || !b)
 		return ;
-	stack_size = ft_list_size(*a);
 	prep_stack_a(a, b);
 	cheapest = ft_cheapest_node(*a);
 	if (!cheapest || !cheapest->target)

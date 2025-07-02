@@ -41,7 +41,6 @@ void	ft_ra(t_stack **a, int i)
 void	ft_rb(t_stack **b, int i)
 {
 	t_stack	*last;
-	t_stack	*temp;
 
 	if (!*b || !(*b)->next)
 		return ;

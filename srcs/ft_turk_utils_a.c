@@ -75,6 +75,7 @@ void	operations_cost_a(t_stack *a, t_stack *b)
 	int	a_size;
 	int	median;
 
+	(void)b;
 	a_size = ft_list_size(a);
 	median = a_size / 2;
 	while (a)

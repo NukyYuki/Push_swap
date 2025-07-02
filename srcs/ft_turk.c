@@ -11,12 +11,10 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
 void	ft_turk(t_stack **a, t_stack **b)
 {
 	int	stack_size;
-	int count = 0;
 	
 	stack_size = ft_list_size(*a);
 	if (stack_size-- > 3 && !ft_sort_checker(*a))
