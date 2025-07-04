@@ -6,7 +6,7 @@
 /*   By: mipinhei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 15:41:31 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/04 11:53:08 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/04 12:23:27 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	ft_free_av(char **av);
 //	sorting
 int		ft_sort_checker(t_stack *a);
 void	ft_sort_three(t_stack **a);
+void	ft_sort_stacks(t_stack **a, t_stack **b);
 //	turk
 void	ft_turk(t_stack **a, t_stack **b);
 void	prep_rot_b(t_stack **a, t_stack **b, t_stack *cheapest);

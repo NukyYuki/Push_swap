@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:43:54 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/25 13:59:28 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/04 12:22:44 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,14 @@ t_stack	*node_max(t_stack *stack)
 		stack = stack->next;
 	}
 	return (node_max);
+}
+
+void	ft_sort_stacks(t_stack **a, t_stack **b)
+{
+	if (ft_list_size(*a) == 2)
+		ft_sa(a, 1);
+	else if (ft_list_size(*a) == 3)
+		ft_sort_three(a);
+	else
+		ft_turk(a, b);
 }

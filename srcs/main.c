@@ -6,12 +6,14 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 16:14:49 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/04 11:52:22 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/04 12:19:47 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include <stdio.h>
+
+void	ft_sort_stacks(t_stack **a, t_stack **b);
 
 int	main(int ac, char **av)
 {
@@ -31,12 +33,7 @@ int	main(int ac, char **av)
 		ft_stack_init(&a, ac, av + 1);
 	while (!ft_sort_checker(a))
 	{
-		if (ft_list_size(a) == 2)
-			ft_sa(&a, 1);
-		else if (ft_list_size(a) == 3)
-			ft_sort_three(&a);
-		else
-			ft_turk(&a, &b);
+		ft_sort_stacks(&a, &b);
 	}
 	if (ac == 2)
 		ft_free_av(av);
