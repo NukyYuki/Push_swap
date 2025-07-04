@@ -6,7 +6,7 @@
 /*   By: mipinhei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 15:41:31 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/03 12:49:04 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:53:08 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_list_stack
 }	t_stack;
 
 //	list helper
-void	ft_stack_init(t_stack **a, char **av);
+void	ft_stack_init(t_stack **a, int ac, char **av);
 t_stack	*ft_list_last(t_stack **head);
 void	add_node(t_stack **a, int content);
 int		ft_list_size(t_stack *head);
@@ -59,7 +59,8 @@ void	ft_rrr(t_stack **a, t_stack **b);
 int		ft_valid_numbers(char *av);
 int		ft_valid_list(t_stack *a, int n);
 void	ft_free_list(t_stack **a);
-void	free_err(t_stack **a);
+void	free_err(t_stack **a, int ac, char **av);
+void	ft_free_av(char **av);
 //	sorting
 int		ft_sort_checker(t_stack *a);
 void	ft_sort_three(t_stack **a);
@@ -85,5 +86,6 @@ void	operations_cost_b(t_stack *a, t_stack *b);
 void	a_target(t_stack *a, t_stack *b);
 void	b_target(t_stack *a, t_stack *b);
 void	check_top(t_stack **a);
+int		valid_node(t_stack *stack, int content);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:42:22 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/06/27 14:43:12 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:54:17 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_stack_init(t_stack **a, char **av)
+void	ft_stack_init(t_stack **a, int ac, char **av)
 {
 	long	n;
 	int		i;
@@ -21,12 +21,12 @@ void	ft_stack_init(t_stack **a, char **av)
 	while (av[i])
 	{
 		if (ft_valid_numbers(av[i]) == 1)
-			free_err(a);
+			free_err(a, ac, av);
 		n = ft_atol(av[i]);
 		if (n > INT_MAX || n < INT_MIN)
-			free_err(a);
+			free_err(a, ac, av);
 		if (ft_valid_list(*a, n) == 1)
-			free_err(a);
+			free_err(a, ac, av);
 		add_node(a, (int)n);
 		i++;
 	}

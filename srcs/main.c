@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 16:14:49 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 17:27:07 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:52:22 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		av = ft_split(av[1], ' ');
-		ft_stack_init(&a, av);
+		ft_stack_init(&a, ac, av);
 	}
 	else
-		ft_stack_init(&a, av + 1);
+		ft_stack_init(&a, ac, av + 1);
 	while (!ft_sort_checker(a))
 	{
 		if (ft_list_size(a) == 2)
@@ -38,6 +38,8 @@ int	main(int ac, char **av)
 		else
 			ft_turk(&a, &b);
 	}
+	if (ac == 2)
+		ft_free_av(av);
 	ft_free_list(&a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:19:54 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/07/02 12:06:18 by mipinhei         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:01:58 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,21 @@ void	ft_pb(t_stack **a, t_stack **b)
 
 	if (!*a)
 		return ;
+	temp = *a;
+	*a = (*a)->next;
+	if (*a)
+		(*a)->prev = NULL;
+	temp->prev = NULL;
 	if (!*b)
 	{
-		*b = *a;
-		*a = (*a)->next;
-		(*a)->prev = NULL;
-		(*b)->next = NULL;
+		*b = temp;
+		temp->next = NULL;
 	}
 	else
 	{
-		temp = *b;
-		*b = *a;
-		*a = (*a)->next;
-		(*a)->prev = NULL;
-		(*b)->next = temp;
-		if (!temp->prev)
-			(*b)->prev = NULL;
-		temp->prev = (*b);
+		temp->next = *b;
+		temp->next->prev = temp;
+		*b = temp;
 	}
 	write(1, "pb\n", 3);
 }
@@ -45,27 +43,21 @@ void	ft_pa(t_stack **a, t_stack **b)
 
 	if (!*b)
 		return ;
+	temp = *b;
+	*b = (*b)->next;
+	if (*b)
+		(*b)->prev = NULL;
+	temp->prev = NULL;
 	if (!*a)
 	{
-		*a = *b;
-		*b = (*b)->next;
-		(*b)->prev = NULL;
-		(*a)->next = NULL;
+		*a = temp;
+		temp->next = NULL;
 	}
 	else
 	{
-		temp = *a;
-		*a = *b;
-		if ((*b)->next)
-		{
-			*b = (*b)->next;
-			(*b)->prev = NULL;
-		}
-		else
-			*b = NULL;
-		(*a)->next = temp;
-		temp->prev = (*a);
-		(*a)->prev = NULL;
+		temp->next = *a;
+		temp->next->prev = temp;
+		*a = temp;
 	}
 	write(1, "pa\n", 3);
 }
